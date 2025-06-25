@@ -6,6 +6,8 @@ import FloatingDockDemo from "@/components/floating-dock-demo";
 import { Button } from "@/components/ui/button";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
+import NavBar from "@/components/comp-578";
+import SplashCursor from "@/components/ui/splashcursor";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -17,21 +19,12 @@ const geistMono = Geist_Mono({
 });
 
 export default function RootLayout({ children }) {
-  const { theme, setTheme } = useTheme();
-
-  const toggleTheme = () => setTheme(theme === "light" ? "dark" : "light");
-
   return (
     <html suppressHydrationWarning lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <LayoutContent>{children}</LayoutContent>
         </ThemeProvider>
       </body>
@@ -45,8 +38,9 @@ function LayoutContent({ children }) {
 
   return (
     <>
-      <div className="flex flex-row p-2 border-b gap-4 items-center">
-        <FloatingDockDemo />
+      <div className="flex flex-row mr-3 gap-4 items-center justify-between z-50">
+        {/* <FloatingDockDemo /> */}
+        <NavBar />
         <Button
           className="flex"
           variant="outline"
@@ -58,6 +52,7 @@ function LayoutContent({ children }) {
           <span className="sr-only">Toggle theme</span>
         </Button>
       </div>
+      <SplashCursor />
       {children}
     </>
   );
