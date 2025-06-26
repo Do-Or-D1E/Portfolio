@@ -52,7 +52,9 @@ function LayoutContent({ children }) {
           <span className="sr-only">Toggle theme</span>
         </Button>
       </div>
-      <SplashCursor />
+      <div className="hidden md:block">
+        <SplashCursor />
+      </div>
       {children}
     </>
   );

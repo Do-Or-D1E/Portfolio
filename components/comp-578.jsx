@@ -20,46 +20,23 @@ import {
 // Navigation links array to be used in both desktop and mobile menus
 const navigationLinks = [
   { href: "#", label: "Home" },
+
   {
-    label: "Features",
-    submenu: true,
-    type: "description",
-    items: [
-      {
-        href: "#",
-        label: "Components",
-        description: "Browse all components in the library.",
-      },
-      {
-        href: "#",
-        label: "Documentation",
-        description: "Learn how to use the library.",
-      },
-      {
-        href: "#",
-        label: "Templates",
-        description: "Pre-built layouts for common use cases.",
-      },
-    ],
-  },
-  {
-    label: "Pricing",
+    label: "Projects",
     submenu: true,
     type: "simple",
     items: [
-      { href: "#", label: "Product A" },
-      { href: "#", label: "Product B" },
-      { href: "#", label: "Product C" },
-      { href: "#", label: "Product D" },
+      { href: "#", label: "Project 1" },
+      { href: "#", label: "Product 2" },
     ],
   },
   {
-    label: "About",
+    label: "About me",
     submenu: true,
     type: "icon",
     items: [
-      { href: "#", label: "Getting Started", icon: "BookOpenIcon" },
-      { href: "#", label: "Tutorials", icon: "LifeBuoyIcon" },
+      { href: "#", label: "My Tech Stack", icon: "BookOpenIcon" },
+      { href: "#", label: "Experience", icon: "LifeBuoyIcon" },
       { href: "#", label: "About Us", icon: "InfoIcon" },
     ],
   },
@@ -257,10 +234,10 @@ export default function NavBar() {
         {/* Right side */}
         <div className="flex items-center gap-2">
           <Button asChild variant="ghost" size="sm" className="text-sm">
-            <a href="#">Sign In</a>
+            <a href="#">View my work</a>
           </Button>
           <Button asChild size="sm" className="text-sm">
-            <a href="#">Get Started</a>
+            <a href="#">Download CV</a>
           </Button>
         </div>
       </div>

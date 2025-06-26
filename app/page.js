@@ -9,8 +9,12 @@ import GradientText from "@/components/ui/gradient-text";
 import { Spotlight } from "@/components/ui/spotlight-new";
 import { HighlightText } from "@/components/animate-ui/text/highlight";
 import { IconCloud } from "@/components/magicui/icon-cloud";
-
+import { OrbitingCircles } from "@/components/magicui/orbiting-circles";
+import { File, Settings, Search } from "lucide-react";
+import Image from "next/image";
+import { ShimmerButton } from "@/components/magicui/shimmer-button";
 import Squares from "@/components/ui/squares";
+import { ShinyButton } from "@/components/magicui/shiny-button";
 export default function Home() {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -31,7 +35,8 @@ export default function Home() {
 
     "vercel",
     "testinglibrary",
-
+    "shadcnui",
+    "mui",
     "docker",
     "git",
     "github",
@@ -45,7 +50,7 @@ export default function Home() {
   return (
     <>
       <div className="h-[40rem] w-full rounded-md flex md:items-center md:justify-center antialiased bg-grid-white/[0.02] relative overflow-hidden">
-        <Spotlight className="" />
+        <Spotlight className="bg-gradient-to-b from-neutral-50 to-neutral-400" />
         <div className=" p-4 max-w-7xl  mx-auto relative z-10  w-full pt-20 md:pt-0">
           <motion.h1
             ref={ref}
@@ -73,7 +78,7 @@ export default function Home() {
           >
             Add a splash of color!
           </GradientText> */}
-          <div className="flex flex-col text-center m-5 gap-5">
+          <div className="flex flex-col items-center text-center m-5 gap-5">
             <TypingText
               className="text-4xl font-semibold dark:bg-gradient-to-b dark:from-neutral-50 dark:to-neutral-400 dark:bg-clip-text dark:text-transparent pb-2"
               text={[
@@ -87,12 +92,80 @@ export default function Home() {
               loop={true}
               holdDelay={2150}
             />
-            <LiquidButton>View my work</LiquidButton>
+            <div className="flex flex-row gap-50 mt-3">
+              <ShinyButton>View my work</ShinyButton>
+              <ShimmerButton
+                shimmerSpread="160deg"
+                shimmerColor="#0000FF"
+                shimmerSize="0.21rem"
+                shimmerDuration="5s"
+                className="shadow-2xl"
+                background="rgba(0, 0, 0, 1)"
+              >
+                <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+                  Download CV
+                </span>
+              </ShimmerButton>
+            </div>
           </div>
         </div>
       </div>
-      <div className="relative flex size-full items-center justify-center overflow-hidden">
-        <IconCloud images={images} />
+      <div className="relative flex size-full items-center justify-center overflow-hidden"></div>
+      <div className="relative overflow-hidden h-[500px] w-full flex items-center justify-center">
+        <IconCloud images={images} className="absolute" />
+        <OrbitingCircles radius={160}>
+          <Image
+            src="https://cdn.simpleicons.org/react/react.svg"
+            alt="react"
+            width={100}
+            height={100}
+          />
+          <Image
+            src="https://cdn.simpleicons.org/nextdotjs/nextdotjs.svg"
+            alt="nextjs"
+            width={100}
+            height={100}
+          />
+          <Image
+            src="https://cdn.simpleicons.org/javascript/javascript.svg"
+            alt="javascript"
+            width={100}
+            height={100}
+          />
+          <Image
+            src="https://cdn.simpleicons.org/html5/html5.svg"
+            alt="html5"
+            width={100}
+            height={100}
+          />
+        </OrbitingCircles>
+
+        <OrbitingCircles radius={230} reverse speed={2}>
+          <Image
+            src="https://cdn.simpleicons.org/react/react.svg"
+            alt="react"
+            width={100}
+            height={100}
+          />
+          <Image
+            src="https://cdn.simpleicons.org/nextdotjs/nextdotjs.svg"
+            alt="nextjs"
+            width={100}
+            height={100}
+          />
+          <Image
+            src="https://cdn.simpleicons.org/javascript/javascript.svg"
+            alt="javascript"
+            width={100}
+            height={100}
+          />
+          <Image
+            src="https://cdn.simpleicons.org/html5/html5.svg"
+            alt="html5"
+            width={100}
+            height={100}
+          />
+        </OrbitingCircles>
       </div>
     </>
   );
