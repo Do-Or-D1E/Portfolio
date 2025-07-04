@@ -29,7 +29,8 @@
     "**/*.tsx",
     "next-env.d.ts",
     ".next/types/**/*.ts",
-    "components/ui/splashcursor.jsx"
+    "components/ui/splashcursor.jsx",
+    "components/resize-navbar.tsx"
   ],
   "exclude": ["node_modules"]
 }
