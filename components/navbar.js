@@ -82,8 +82,27 @@ export default function Navbar() {
 
         {/* Mobile Navigation */}
         <MobileNav>
-          <MobileNavHeader>
+          <MobileNavHeader className="">
             <NavbarLogo />
+            <RainbowButton
+              onClick={() => {
+                handleDownload();
+                setIsMobileMenuOpen(false);
+              }}
+              className="absolute right-30   font-bold"
+            >
+              Download CV
+            </RainbowButton>
+            <NavbarButton
+              className="flex absolute right-13"
+              variant="outline"
+              size="icon"
+              onClick={toggleTheme}
+            >
+              <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
+              <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
+              <span className="sr-only">Toggle theme</span>
+            </NavbarButton>
             <MobileNavToggle
               isOpen={isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -103,28 +122,6 @@ export default function Navbar() {
                 <span className="block">{item.name}</span>
               </a>
             ))}
-            <div className="flex w-full flex-col gap-4 mt-4">
-              <NavbarButton
-                onClick={() => {
-                  handleDownload();
-                  setIsMobileMenuOpen(false);
-                }}
-                variant="primary"
-                className="w-full"
-              >
-                Download CV
-              </NavbarButton>
-              <NavbarButton
-                onClick={() => {
-                  toggleTheme();
-                  setIsMobileMenuOpen(false);
-                }}
-                variant="outline"
-                className="w-full"
-              >
-                Toggle Theme
-              </NavbarButton>
-            </div>
           </MobileNavMenu>
         </MobileNav>
       </NavbarContainer>
